@@ -1,13 +1,235 @@
-body {
+:root {
+  --color-lightest: #fff4e6;
+  --color-light: #ffe8cc;
+  --color-medium: #ffa94d;
+  --color-dark: #ff922b;
+}
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+html {
+  font-size: 62.5%;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+body {
+  height: 100vh;
+  color: #495057;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.App {
+}
+.pokedex {
+  height: 80vh;
+  border-radius: 11px;
+  padding: 4.8rem;
+  background-color: #f6f6f6;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  padding: 1rem;
+  gap: 1rem;
+  box-shadow: 0 1px 0 20px #0000;
+}
+
+button {
+  background-color: #f56251;
+  min-width: 50%;
+  padding: 2rem;
+  border: none;
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #f5f5f5;
+  transition: all 0.3s;
+  cursor: pointer;
+  border-radius: 50px;
+}
+
+button:hover {
+  background-color: #f78174;
+}
+
+.pokemon-list {
+  list-style: none;
+  display: grid;
+  gap: 0.7rem;
+  padding: 0.7rem;
+  background-color: #dddddd;
+  border-radius: 9px;
+  height: 100%;
+  overflow-y: scroll;
+}
+
+.pokemon-list li {
+  color: #fff;
+  font-size: 1.4rem;
+  text-transform: capitalize;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding-right: 2rem;
+  border-radius: 500px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.img-box {
+  display: inline-block;
+  height: 5rem;
+  width: 5rem;
+  background-color: #f5f5f5;
+  border-radius: 50%;
+}
+
+.pokemon-list li img {
+  width: 4.8rem;
+}
+
+.pokmeon-display {
+  background-color: #fff;
+  border-radius: 9px;
+  overflow: hidden;
+}
+
+.pokmeon-display header {
+  padding: 2rem;
+  position: relative;
+  width: 100%;
+  height: 30%;
+  justify-self: flex-start;
+  margin-bottom: 15%;
+}
+.header-img {
+  position: absolute;
+  width: 30%;
+  left: 50%;
+  bottom: 0;
+  transform: translate(-50%, 50%);
+}
+header h2 {
+  color: white;
+  font-size: 3rem;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.pokemon-data {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.types {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+  justify-content: center;
+}
+
+.lable {
+  padding: 0.5rem 2rem;
+  border-radius: 30px;
+  color: #fff;
+}
+.height-weight {
+  display: flex;
+  gap: 2rem;
+  justify-content: space-around;
+}
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+.stats li {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  text-transform: uppercase;
+  /* justify-content: center; */
+}
+
+.stat-num {
+  font-size: 3rem;
+}
+
+/* TYPES */
+.grass {
+  background-color: #78c850;
+}
+.grass:hover {
+  background-color: #4e8234;
+}
+
+.fire {
+  background-color: #f08030;
+}
+
+.fire:hover {
+  background-color: #9c531f;
+}
+
+.water {
+  background-color: #6890f0;
+}
+.bug {
+  background-color: #a8b820;
+}
+.normal {
+  background-color: #a8a878;
+}
+.poison {
+  background-color: #a040a0;
+}
+.electric {
+  background-color: #f8d030;
+}
+.ground {
+  background-color: #e0c068;
+}
+.fairy {
+  background-color: #ee99ac;
+}
+.fighting {
+  background-color: #c03028;
+}
+.psychic {
+  background-color: #f85888;
+}
+.ghost {
+  background-color: #705898;
+}
+.rock {
+  background-color: #b8a038;
+}
+.ice {
+  background-color: #98d8d8;
+}
+.dragon {
+  background-color: #7038f8;
+}
+.steel {
+}
+.flying {
+  background-color: #a890f0;
+}
+.dark {
+}
+
+@media screen and (max-width: 900px) {
+  .pokedex {
+    height: 100vh;
+    grid-template-columns: 1fr;
+    grid-template-rows: 3fr 2fr;
+    gap: 2rem;
+  }
+  .pokemon-list {
+    grid-row: 2;
+    padding: 2rem;
+  }
 }
